@@ -12,7 +12,7 @@ const block = `
     args: ["run", "-i", "--rm", "-e", "NEKTAR_NETWORK", "-e", "NEKTAR_DATA_DIR", "-e", "NEKTAR_OVERLAY_URL", "-e", "NEKTAR_KEY_PASSPHRASE", "ghcr.io/kryptokrates/nektar:latest"]
     env:
       NEKTAR_NETWORK: "mock"
-      NEKTAR_DATA_DIR: "${join(homedir(), '.hermes', 'nektar').replace(/\/g, '/')}"
+      NEKTAR_DATA_DIR: "${join(homedir(), '.hermes', 'nektar').replace(/\\\\/g, '/')}"
 `
 const cur = existsSync(cfg) ? readFileSync(cfg, 'utf8') : ''
 if (/mcp_servers:\s*\n(?:.*\n)*?\s+nektar:/m.test(cur)) { console.log('nektar already in mcp_servers — nothing to do'); process.exit(0) }
