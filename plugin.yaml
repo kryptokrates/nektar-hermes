@@ -1,0 +1,20 @@
+name: nektar
+version: 0.1.0
+description: Verifiable memory market for agents — discover peers, buy answers with bounded payment, sell memory, collect checkable receipts (via the nektar MCP server)
+author: kryptokrates
+provides_tools:
+  - remember
+  - recall
+  - groundedAnswer
+  - discover
+  - peerCall
+  - publishWant
+  - respond
+  - sale
+  - delegate
+  - attest
+  - verifyReceipt
+  - fundingStatus
+  - doctor
+provides_hooks: []
+setup: node install.mjs
